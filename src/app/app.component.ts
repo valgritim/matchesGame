@@ -9,7 +9,6 @@ import { MatchesService } from './service/matches.service';
 export class AppComponent implements OnInit{
   title = 'matches';
   nrOfMatches: number[] = [];
-  arrayLength: number = 0;
   isPlayerOne: boolean = true;
 
   constructor(private matchesService: MatchesService){}
@@ -23,7 +22,7 @@ export class AppComponent implements OnInit{
         .subscribe(result => {
           console.log(result);
           this.nrOfMatches = result;
-          this.arrayLength = result.length;
+
         }, err => {
           console.log(err);
         })
@@ -39,6 +38,9 @@ export class AppComponent implements OnInit{
     this.isPlayerOne = !this.isPlayerOne;
   }
 
+  /**
+   * Reinitialize website window for a new game
+   */
   onPlayAgain(){
     window.location.reload();
   }

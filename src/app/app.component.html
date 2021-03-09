@@ -12,9 +12,9 @@
         <h2 *ngIf="!isPlayerOne && nrOfMatches.length !=0">Jeu:  Player Two</h2>
         <p>Choisis le nombre d'allumettes que tu veux enlever</p>
         <form action="#">
-          <input type="button" value="1" (click)="onDismissMatches(1)">
-          <input type="button" value="2" (click)="onDismissMatches(2)" [disabled]="nrOfMatches.length < 2">
-          <input type="button" value="3" (click)="onDismissMatches(3)" [disabled]="nrOfMatches.length < 3">
+          <input type="button" value="1" (click)="onDecreaseMatches(1)">
+          <input type="button" value="2" (click)="onDecreaseMatches(2)" [disabled]="nrOfMatches.length < 2">
+          <input type="button" value="3" (click)="onDecreaseMatches(3)" [disabled]="nrOfMatches.length < 3">
         </form>
       </div>
     </div>

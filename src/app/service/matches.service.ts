@@ -11,7 +11,7 @@ export class MatchesService {
   constructor() { }
 
   /**
-   * Observable on arrayRandom values
+   * Observable on arrayRandom values to check the changes
    * @returns Observable
    */
   checkNrOfMatches(){
@@ -20,7 +20,7 @@ export class MatchesService {
 
   /**
    *
-   * @returns Gives a random number of matches to start the game
+   * @returns Gives a random number of matches to start the game min. 15 matches
    */
   randomNrOfMatches(){
     this.randomNr = Math.floor(Math.random() * (20 - 15) + 15);

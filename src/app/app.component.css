@@ -1,0 +1,11 @@
+img{
+  height: 80px;
+  width: 80px;
+}
+li{
+  list-style-type: none;
+}
+.bounce{
+  width: 20%;
+  margin: auto;
+}

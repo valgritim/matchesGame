@@ -32,7 +32,7 @@ export class AppComponent implements OnInit{
  * Method: call matches service to decrease the total number of matches by the choosen number
  * @param nrToDecreaseBy
  */
-  onDismissMatches(nrToDecreaseBy : number){
+  onDecreaseMatches(nrToDecreaseBy : number){
 
     this.matchesService.decreaseNrOfMatches(nrToDecreaseBy);
     this.isPlayerOne = !this.isPlayerOne;

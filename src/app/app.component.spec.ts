@@ -1,5 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { MatchesService } from './service/matches.service';
+
+let service: MatchesService;
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -8,6 +11,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+    service = TestBed.inject(MatchesService);
   });
 
   it('should create the app', () => {
@@ -22,10 +26,18 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('matches');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('matches app is running!');
+  it('tableau ramdom initialisé', () => {
+    let result = service.randomNrOfMatches();
+    expect(result).toBeDefined();
+    expect(result.length).toBeGreaterThanOrEqual(15);
+    expect(result.length).toBeLessThanOrEqual(20);
   });
+
+  it('verifier le switch entre les player', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+
+    app.onDecreaseMatches(1);
+    expect(app.isPlayerOne).toBe(false);
+  })
 });

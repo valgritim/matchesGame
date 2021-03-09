@@ -27,7 +27,7 @@ export class MatchesService {
     for(var i = 0; i< this.randomNr; i++){
       this.arrayRandom[i] = 1 ;
     }
-    return of(this.arrayRandom);
+    return this.arrayRandom;
   }
 
   /**
